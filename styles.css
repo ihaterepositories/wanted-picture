@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    background-color: #f7f7f7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/*HEADER*/
+
+.header {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 0 0 10px 10px; /* Заокруглення тільки для нижніх кутів */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+#counter {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+}
+
+#imageUpload {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+#exportButton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #CABDFF;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+}
+
+/*NAVIGATION*/
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.navigation-button {
+    min-height: 50px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1.5px solid #000000;
+    cursor: pointer;
+}
+
+#labelList {
+    width: 100%;
+    min-width: 700px;
+    min-height: 50px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1.5px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+/*IMAGE SECTION*/
+
+.image-container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    height: 80vh;
+}
+
+#currentImage {
+    max-width: 400px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#metadata {
+    color: #555;
+}
+
+/*ANNOTATION SECTION*/
+
+#addingAnnotationsContainer {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#labelInput {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid #000000;
+    width: 100%;
+    width: 300px;
+}
+
+#addLabelButton {
+    width: 100%;
+    max-width: 100px;
+    background-color: #beffaf;
+    border: 1.5px solid #000000;
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#sessionTimer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+}
+
+/*FOOTER*/
+
+.footer {
+    width: 100%;
+    max-width: 1000px;
+    height: 150px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    overflow-y: auto;
+}
+
+.label-button {
+    color: #000000;
+    background-color: #ffffff;
+    border: 0px solid #000000;
+    padding: 8px 10px;
+    text-decoration: underline;
+    font-size: 1rem;
+    cursor: pointer;
+    gap: 10px;
+}
+

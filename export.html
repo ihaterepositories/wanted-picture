@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Annotations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Exported Annotations</h1>
+        <pre id="jsonOutput"></pre>
+        <button id="downloadButton">Download JSON</button>
+    </div>
+
+    <script>
+        // Отримуємо JSON з URL параметра
+        const urlParams = new URLSearchParams(window.location.search);
+        const jsonData = urlParams.get('data');
+
+        // Виводимо JSON в зручному форматі
+        document.getElementById('jsonOutput').textContent = JSON.stringify(JSON.parse(decodeURIComponent(jsonData)), null, 2);
+
+        // Функція для завантаження JSON-файлу
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            const blob = new Blob([JSON.stringify(JSON.parse(decodeURIComponent(jsonData)), null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'annotations.json';
+            a.click();
+            URL.revokeObjectURL(url); // Очищення URL після завантаження
+        });
+    </script>
+</body>
+</html>

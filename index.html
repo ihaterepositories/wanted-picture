@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Annotation Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="header">
+        <h2>Image Annotation Tool</h2>
+        <div>
+            <div id="counter">Annotated 0 / 0</div> 
+            <label for="imageUpload" class="custom-file-upload">Upload images</label>
+            <input type="file" id="imageUpload" multiple accept="image/*">
+            <button id="exportButton">Export Annotations</button>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button id="prevButton" class="navigation-button">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <div id="labelList"></div>
+        <button id="nextButton" class="navigation-button">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div class="image-container">
+        <img id="currentImage" src="" alt="No image loaded">
+        <div id="metadata">name: none, size: 0 bytes, type: none</div>
+    </div>
+
+    <div id="addingAnnotationsContainer">
+        <div id="addingAnnotationsContainer">
+            <input type="text" id="labelInput" placeholder="Enter label">
+            <button id="addLabelButton">Add Label</button>
+        </div>
+        <div id="sessionTimer">00:00:00</div>
+    </div>  
+
+    <div class="footer">
+        <div id="labelButtonsContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

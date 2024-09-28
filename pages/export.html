@@ -9,27 +9,38 @@
 <body>
     <div class="container">
         <h1>Exported Annotations</h1>
+        <button id="downloadJsonButton">Download JSON</button>
+        <button id="downloadCsvButton">Download CSV</button>
         <pre id="jsonOutput"></pre>
-        <button id="downloadButton">Download JSON</button>
     </div>
 
     <script>
-        // Отримуємо JSON з URL параметра
         const urlParams = new URLSearchParams(window.location.search);
         const jsonData = urlParams.get('data');
+        const parsedData = JSON.parse(decodeURIComponent(jsonData));
 
-        // Виводимо JSON в зручному форматі
-        document.getElementById('jsonOutput').textContent = JSON.stringify(JSON.parse(decodeURIComponent(jsonData)), null, 2);
+        document.getElementById('jsonOutput').textContent = JSON.stringify(parsedData, null, 2);
 
-        // Функція для завантаження JSON-файлу
-        document.getElementById('downloadButton').addEventListener('click', function() {
-            const blob = new Blob([JSON.stringify(JSON.parse(decodeURIComponent(jsonData)), null, 2)], { type: 'application/json' });
+        document.getElementById('downloadJsonButton').addEventListener('click', function() {
+            const blob = new Blob([JSON.stringify(parsedData, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
             a.download = 'annotations.json';
             a.click();
             URL.revokeObjectURL(url); // Очищення URL після завантаження
+        });
+
+        document.getElementById('downloadCsvButton').addEventListener('click', function() {
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + Object.keys(parsedData[0]).join(",") + "\n" // Заголовки
+                + parsedData.map(e => Object.values(e).join(",")).join("\n"); // Дані
+            
+            const encodedUri = encodeURI(csvContent);
+            const a = document.createElement('a');
+            a.setAttribute("href", encodedUri);
+            a.setAttribute("download", "annotations.csv");
+            a.click();
         });
     </script>
 </body>

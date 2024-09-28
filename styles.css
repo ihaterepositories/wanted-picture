@@ -94,9 +94,9 @@ body {
     cursor: pointer;
 }
 
-#labelList {
+#imageAnnotationsInfo {
     width: 100%;
-    min-width: 700px;
+    min-width: 875px;
     min-height: 50px;
     padding: 5px;
     background-color: #f9f9f9;
@@ -150,20 +150,25 @@ body {
 #labelInput {
     padding: 10px;
     border-radius: 10px;
-    border: 1.5px solid #000000;
+    border: 1.5px solid #beffaf;
     width: 100%;
-    width: 300px;
+    width: 150px;
 }
 
-#addLabelButton {
+#tagInput {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid #ffbebe;
     width: 100%;
-    max-width: 100px;
-    background-color: #beffaf;
-    border: 1.5px solid #000000;
-    color: #000000;
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
+    width: 150px;
+}
+
+#commentInput {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid #CABDFF;
+    width: 100%;
+    width: 300px;
 }
 
 #sessionTimer {
